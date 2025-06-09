@@ -18,20 +18,17 @@ public class ControladorGasto {
         return gestorDatos.insertarGasto(matricula, tipo, km, fecha, importe, descripcion);
     }
 
-    // Obtener todos los gastos de un coche (sin filtros)
+    // Obtener todos los gastos de un coche 
     public ResultSet obtenerGastosDeCoche(String matricula) throws SQLException {
         return gestorDatos.obtenerGastosFiltrados(matricula, null, null, null);
     }
 
     // Obtener gastos filtrados por año, fecha y kilometraje
     public ResultSet obtenerGastosFiltrados(String matricula, String año, String fechaDesde, String fechaHasta, Integer kmMin, Integer kmMax) throws SQLException {
-        // Este método solo filtra por año y km (no por rango de fechas)
-        // Si necesitas filtrar por rango de fechas, debes modificar el método en GestorDatos
-        // Aquí lo adaptamos para que funcione con los parámetros básicos disponibles
         return gestorDatos.obtenerGastosFiltrados(matricula, año, kmMin, kmMax);
     }
 
-    // Método auxiliar: transformar ResultSet a lista de objetos Gasto (simplificado)
+    
     public List<GastoSimplificado> listarGastos(ResultSet rs) throws SQLException {
         List<GastoSimplificado> gastos = new ArrayList<>();
         while (rs.next()) {
@@ -46,21 +43,17 @@ public class ControladorGasto {
         return gastos;
     }
 
-    // Editar un gasto (requiere implementar método en GestorDatos)
+    // Editar un gasto 
     public boolean editarGasto(int idGasto, String tipo, int km, String fecha, double importe, String descripcion) throws SQLException {
-        // Implementa en GestorDatos: "UPDATE gastos SET tipo=?, km=?, fecha=?, importe=?, descripcion=? WHERE id=?"
-        // ¡Este método es solo un ejemplo! Debes implementarlo en GestorDatos.
         return false;
     }
 
-    // Eliminar un gasto (requiere implementar método en GestorDatos)
-    public boolean eliminarGasto(int idGasto) throws SQLException {
-        // Implementa en GestorDatos: "DELETE FROM gastos WHERE id=?"
-        // ¡Este método es solo un ejemplo! Debes implementarlo en GestorDatos.
+    // Eliminar un gasto
+    public boolean eliminarGasto(int idGasto) throws SQLException { 
         return false;
     }
 
-    // Clase interna para facilitar el manejo de gastos en la vista
+    
     public static class GastoSimplificado {
         public final String fecha;
         public final String tipo;

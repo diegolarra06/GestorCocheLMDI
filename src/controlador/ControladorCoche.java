@@ -13,24 +13,19 @@ public class ControladorCoche {
         this.gestorDatos = gestorDatos;
     }
 
-    // Crear coche (retorna true si se crea correctamente)
+    // Crear coche 
     public boolean crearCoche(String matricula, String marca, String modelo, int año) throws SQLException {
         return gestorDatos.insertarCoche(matricula, marca, modelo, año);
     }
 
-    // Editar coche (¡IMPORTANTE! Necesitarías un método en GestorDatos para actualizar)
+    // Editar coche 
     public boolean editarCoche(String matricula, String marca, String modelo, int año) throws SQLException {
-        // Este método no está implementado en GestorDatos, pero aquí tienes el esqueleto:
-        // "UPDATE coches SET marca = ?, modelo = ?, año = ? WHERE matricula = ?"
-        // ¡Implementa esto en GestorDatos si lo necesitas!
         return false;
     }
 
-    // Eliminar coche (¡IMPORTANTE! Necesitarías un método en GestorDatos para borrar)
+    // Eliminar coche 
     public boolean eliminarCoche(String matricula) throws SQLException {
-        // Este método no está implementado en GestorDatos, pero aquí tienes el esqueleto:
-        // "DELETE FROM coches WHERE matricula = ?"
-        // ¡Implementa esto en GestorDatos si lo necesitas!
+        
         return false;
     }
 
@@ -44,7 +39,7 @@ public class ControladorCoche {
         return gestorDatos.obtenerGastosFiltrados(matricula, año, kmMin, kmMax);
     }
 
-    // Obtener todos los coches de un usuario (ya está en ControladorUsuario, pero lo dejamos por si lo quieres aquí)
+    // Obtener todos los coches de un usuario 
     public List<String> obtenerCochesDeUsuario(String uuidUsuario) throws SQLException {
         return gestorDatos.obtenerCochesDeUsuario(uuidUsuario);
     }

@@ -86,7 +86,7 @@ Ve al menú: File > Import...
 Selecciona: Git > Projects from Git y haz clic en Next.
 Elige la opción: Clone URI y haz clic en Next.
 Pega la URL del repositorio GitHub:
-https://github.com/tu-usuario/tu-proyecto.git
+https://github.com/diegolarra06/GestorCocheLMDI.git
 Haz clic en Next varias veces hasta llegar a la opción: Import existing Eclipse projects.
 
 Selecciona esa opción y haz clic en Finish.

@@ -100,7 +100,47 @@ Asegúrate de tener MySQL instalado y corriendo.
 ![Captura24](https://github.com/user-attachments/assets/b6a83b11-9580-44d8-9de8-0179e5010f2d)
 
 
-3. Crea una base de datos vacía en tu sistema MySQL.
+3. Crea una base de datos llamada LMDICoches en tu sistema MySQL.
+[UCREATE DATABASE IF NOT EXISTS ProjectLMDI;
+
+USE ProjectLMDI;
+
+CREATE TABLE usuarios (
+    uuid VARCHAR(36) PRIMARY KEY,
+    nombre VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE coches (
+    matricula VARCHAR(10) PRIMARY KEY,
+    marca VARCHAR(50) NOT NULL,
+    modelo VARCHAR(50) NOT NULL,
+    año INT NOT NULL
+);
+
+CREATE TABLE usuarios_coches (
+    usuario_uuid VARCHAR(36),
+    matricula VARCHAR(10),
+    PRIMARY KEY (usuario_uuid, matricula),
+    FOREIGN KEY (usuario_uuid) REFERENCES usuarios(uuid) ON DELETE CASCADE,
+    FOREIGN KEY (matricula) REFERENCES coches(matricula) ON DELETE CASCADE
+);
+
+CREATE TABLE gastos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    matricula VARCHAR(10) NOT NULL,
+    tipo VARCHAR(20) NOT NULL,
+    km INT NOT NULL,
+    fecha VARCHAR(10) NOT NULL,
+    importe DECIMAL(10,2) NOT NULL,
+    descripcion VARCHAR(200),
+    FOREIGN KEY (matricula) REFERENCES coches(matricula) ON DELETE CASCADE
+);
+SELECT * FROM usuarios;
+SELECT * FROM usuarios_coches;
+SELECT * FROM gastos;
+SELECT * FROM coches;ploading ProjectLMDI.sql…]()
+
 4. En tu código Java, asegúrate de tener la configuración de conexión correctamente escrita.
 5. Ejecutar el proyecto
 Ubicar la clase principal ( Main.java).

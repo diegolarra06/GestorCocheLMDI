@@ -12,7 +12,7 @@ public class GestorDatos {
     public GestorDatos(BaseDatos baseDatos) {
         this.baseDatos = baseDatos;
     }
-
+     //metodo
     public boolean insertarUsuario(String uuid, String nombre, String password) throws SQLException {
         String sql = "INSERT INTO usuarios (uuid, nombre, password) VALUES (?, ?, ?)";
         try (PreparedStatement pstmt = baseDatos.getConnection().prepareStatement(sql)) {

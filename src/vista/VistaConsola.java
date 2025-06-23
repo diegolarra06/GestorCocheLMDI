@@ -43,7 +43,7 @@ public class VistaConsola {
         while (gastos.next()) {
             System.out.println(
                 gastos.getString("fecha") + "\t" +
-                gastos.getString("tipo") + "\t" +
+                gastos.getString("tipo de gasto") + "\t" +
                 gastos.getDouble("importe") + "€\t\t" +
                 gastos.getString("descripcion")
             );

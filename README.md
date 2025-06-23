@@ -72,6 +72,9 @@ DB_USERNAME=root
 DB_PASSWORD=PracticaRoot
 DB_DATABASE=ProjectLMDI
 
+![Captura245](https://github.com/user-attachments/assets/ff01a3ca-3ba9-447f-9a72-e346871f5cdd)
+
+
 ![BaseDatosDiegoL](https://github.com/user-attachments/assets/ea494770-d955-4fa6-8e77-b7b44be816a7)
 
 
